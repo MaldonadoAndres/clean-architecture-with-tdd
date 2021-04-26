@@ -24,7 +24,7 @@ void main() {
       (_) async => Right(tNumberTrivia),
     );
     // The "act" phase of the test.
-    final result = await usecase.execute(number: tNumber);
+    final result = await usecase(Params(tNumber));
     // UseCase should simply return whatever was returned from the Repository
     expect(result, Right(tNumberTrivia));
     // Verify that the method has been called on the Repository
